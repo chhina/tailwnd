@@ -16,8 +16,16 @@
       <h1 class="title">
         Dashboard
       </h1>
-      <button class="button light">Button</button>
+      <button (click)="toggleDropdown()" class="button light">Open Drop down</button>
     </div>
+    <div class="relative" [ngClass]="{'hidden': !isDropdownOpen}">
+      <div class="absolute bg-white rounded-md shadow-xs py-2">
+        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Option 1</a>
+        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Option 2</a>
+        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Option 3</a>
+      </div>
+    </div>
+    
   </section>
   
     <section class="section main-section">

@@ -10,6 +10,7 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { MainComponent } from './layouts/main/main.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,14 @@ import { MainComponent } from './layouts/main/main.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule, 
+    AuthModule.forRoot({
+      domain: 'dev-8hvu4nuku21wlhbm.us.auth0.com',
+      clientId: 'oTpg3jMwOtoDzDCGG8TdRGMUmZwho1e7',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
